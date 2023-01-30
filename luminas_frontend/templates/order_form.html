@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<!-- you can use required tag to prevent user from entering empty strings too! - probably simpler -->
+<div><form method="POST">
+    <div>
+        
+        <h1>Create Burger</1>
+        <h2>Buns</h2>
+
+        {{show_input(maxes, types, "bun")}}
+
+        <h2>Paddys</h2>
+
+        {{show_input(maxes, types, "paddy")}}
+    
+
+        <h2>Ingredients</h2>
+
+        {{show_input(maxes, types, "ingredient")}}
+
+        <h1>Create Wrap</h1>
+
+        <h2>Wraps</h2>
+        {{show_input(maxes, types, "wrap")}}
+        
+        <h2>Ingredients</h2>
+        {{show_input(maxes, types, "ingredient")}}
+
+        <h1>Add Side</h1>
+        {{show_radio(maxes, types, "side")}}
+
+        <h1>Add Drink</h1>
+        {{show_radio(maxes, types, "drink")}}
+        <br>        
+
+    {% if is_pay_stage %}
+        <p> Total price: ${{price}} </p>
+        <button name="pay" type="submit">Pay for Order</button>
+        <button name="cancel" type="submit">Cancel Order</button>
+    {% else %}
+        <button name="confirm" type="submit">Confirm Order</button>
+    {% endif %}
+</form></div>
+{% endblock %}
+
+
+
+{% macro show_input(maxes, types, correct_type) %}
+    {% for ingredient,type in types.items() %}
+        {% if type == correct_type %}
+            {%set value = form[ingredient] if form else ''%} 
+            <h>{{ingredient}} </h><input type="number" name="{{ingredient}}" min="0" max="{{maxes[ingredient]}}" value = "{{value}}"
+            {% if is_pay_stage %} readonly {% endif %}/><br>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro show_radio(maxes, types, correct_type) %}
+    {% for ingredient,type in types.items() %}
+        {% if type == correct_type %}
+            {% if maxes[ingredient] != 0 %}:
+                {% if not form or form[correct_type] != ingredient %}:
+                    <input type="radio" name={{correct_type}} value = "{{ingredient}}" 
+                    {% if is_pay_stage %} disabled {% endif %}/><h> {{ingredient}}</h><br>
+                {% else %}
+                    <input type="radio" name={{correct_type}} value = "{{ingredient}}" checked
+                    ><h> {{ingredient}}</h><br>
+                {% endif %}
+
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+
+
+

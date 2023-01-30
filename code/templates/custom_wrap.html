@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>Custom Wrap</h1>
+
+<form method="POST">
+
+
+
+
+
+<div>
+    <h3 style="color:rgb(255, 102, 0);">Meat strips</h3>
+</div> 
+    <h4> please choose a maximum of 3 patties</h4>
+<div>
+    <label>Chicken strips:  </label><input name='chick_strip'/>
+</div>
+<div>
+    <label>Beef strips   :  </label><input name='beef_strip'/>
+</div>
+<div>
+    <label>Vegi strips   :  </label><input name='vegi_strip'/>
+</div>
+
+
+
+<div>
+    <h3 style="color:rgb(238, 255, 0);">Bread</h3>
+</div> 
+    <h4> please choose as many buns as you have been alocated from size selection</h4>
+<div>
+    <label>wheat :  </label><input name='wheat_bread'/>
+</div>
+<div>
+    <label>wholegrain:  </label><input name='whole_bread'/>
+</div>
+
+
+
+<div>
+    <h3 style="color:rgb(7, 243, 58);">ingredients</h3>
+</div> 
+
+<div>
+    <label>Lettus:    </label><input name='w_lettus'/>
+</div>
+<div>
+    <label>Tomato:    </label><input name='w_tomato'/>
+</div>
+<div>
+    <label>Tomato-sauce:    </label><input name='w_tom-sauce'/>
+</div>
+<div>
+    <label>Chedder-cheese:    </label><input name='w_ched-cheese'/>
+</div>
+<div>
+    <label>Swiss-cheese:    </label><input name='w_Swiss-cheese'/>
+</div>
+<div>
+    <div>
+            <div>
+                    <button type='submit' name="action" value= "calc_cust_b">Calculate wrap price</button>
+            </div>
+    </div>
+</div>
+
+
+
+</form>
+{% endblock %}

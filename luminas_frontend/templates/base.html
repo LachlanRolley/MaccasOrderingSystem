@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Gourmet Burger Outlet</title>
+</head>
+
+<body>
+
+<!-- Tab Menu -->
+<a href="{{ url_for('home') }}">Home</a><br>
+
+<a href="{{ url_for('view_current_orders') }}">Staff Service Order</a><br>
+
+<a href="{{ url_for('maintain_inventory') }}">Staff Maintain Inventory</a><br>
+
+
+
+<!-- Main Content Section -->
+{% block body %}{% endblock %}
+
+</body>
+</html>

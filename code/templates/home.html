@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+
+<h1>Menu</h1>
+<form method="POST"> 
+
+
+<div>
+    <h3 style="color:rgb(255, 0, 21);">Main</h3>
+</div> 
+<div>
+   
+    <button type='submit' name="action" value= "c_burg">CUSTOM burger</button>
+    <button type='submit' name="action" value= "q_burg">QUICK burger</button>
+</div>
+<div>
+    <button type='submit' name="action" value= "c_wrap">CUSTOM wrap</button>
+    <button type='submit' name="action" value= "q_wrap">QUICK wrap</button>
+</div>
+
+
+
+
+<div>
+    <h3 style="color:rgb(255, 251, 0);">Sides</h3>
+
+</div>
+<div>
+    <label>Small chips :    </label><input name='s_chip' value = "{{s_chip}}"/> 
+</div>
+<div>
+    <label>Medium chip :   </label><input name='m_chip' value = "{{m_chip}}"/> 
+</div>
+<div>
+    <label>Large chips :    </label><input name='l_chip' value = "{{l_chip}}"/> 
+</div>
+<div>
+    <label>3 chicky nugs:   </label><input name='s_nugs' value = "{{s_nugs}}"/> 
+</div>
+<div>
+    <label>6 chicky nugs:   </label><input name='l_nugs' value = "{{l_nugs}}"/> 
+</div>
+
+
+
+
+
+
+<div>    
+    <h3 style="color:rgb(26, 130, 228);">Drinks</h3>
+</div>
+<div>
+    <label>Small drink:   </label><input name='s_drink' value = "{{s_drink}}"/> 
+</div>
+<div>
+    <label>Large drink:   </label><input name='L_drink' value = "{{l_drink}}"/> 
+</div>
+
+
+
+<div>
+    <button type='submit' name="action" value= "add_item">Add Items</button>
+</div>
+</form>
+
+
+
+
+
+
+
+{% endblock %}

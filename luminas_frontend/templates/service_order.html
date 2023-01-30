@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Order {{order.order_id}}</h1>
+<p style="white-space: pre;">{{ order }}</p>
+
+<div><form method="POST">
+    <div>
+    <button name="complete" type="submit">Complete Order</button>
+</form></div>
+{% endblock %}
+
+    
+    
+    
+    

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>Custom Burger</h1>
+
+<form method="POST">
+
+<div>
+    <h3 style="color:rgb(255, 0, 21);">Size</h3>
+</div> 
+<div>
+    <h4>please place a "1" next to your preffered size</h4> 
+</div> 
+<div>
+    <label>Single burger : (1 patty, 2 buns)    </label><input name='single_burg'/>
+</div>
+<div>
+    <label>Double burger: (2 patty, 3 buns)    </label><input name='double_burg'/>
+</div>
+<div>
+    <label>Tripple burger: (3 patty, 4 buns)    </label><input name='tripple_burg'/>
+</div>
+
+
+
+
+<div>
+    <h3 style="color:rgb(255, 102, 0);">Patty</h3>
+</div> 
+    <h4> please choose as many patties as you have been alocated from size selection</h4>
+<div>
+    <label>Chicken patty:  </label><input name='chick_pat'/>
+</div>
+<div>
+    <label>Beef patty   :  </label><input name='beef_pat'/>
+</div>
+<div>
+    <label>Vegi patty   :  </label><input name='vegi_pat'/>
+</div>
+
+
+
+<div>
+    <h3 style="color:rgb(238, 255, 0);">Bun</h3>
+</div> 
+    <h4> please choose as many buns as you have been alocated from size selection</h4>
+<div>
+    <label>Sesame bun:  </label><input name='ses_bun'/>
+</div>
+<div>
+    <label>Muffin bun:  </label><input name='muf_bun'/>
+</div>
+
+
+
+<div>
+    <h3 style="color:rgb(7, 243, 58);">ingredients</h3>
+</div> 
+
+<div>
+    <label>Lettus:    </label><input name='b_lettus'/>
+</div>
+<div>
+    <label>Tomato:    </label><input name='b_tomato'/>
+</div>
+<div>
+    <label>Tomato-sauce:    </label><input name='b_tom-sauce'/>
+</div>
+<div>
+    <label>Chedder-cheese:    </label><input name='b_ched-cheese'/>
+</div>
+<div>
+    <label>Swiss-cheese:    </label><input name='b_Swiss-cheese'/>
+</div>
+<div>
+    <div>
+            <div>
+                    <button type='submit' name="action" value= "calc_cust_b">Calculate burger price</button>
+            </div>
+    </div>
+</div>
+
+</form>
+{% endblock %}

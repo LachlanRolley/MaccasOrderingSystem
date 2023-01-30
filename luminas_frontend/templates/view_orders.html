@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<!-- you can use required tag to prevent user from entering empty strings too! - probably simpler -->
+<div><form method="POST">
+        <div>
+            
+            <h1>Current Orders</h1>
+            <br>
+            {{show_orders(orders)}}
+            <br>        
+    
+    </form></div>
+    {% endblock %}
+    
+    
+    {% macro show_orders(orders) %}
+        {% for order in orders %}
+            {% if order.status == False %}
+                <a href="{{ url_for('service', order_id = order.order_id) }}">Order number {{order.order_id}}</a><br>
+            {% endif %}
+        {% endfor %}
+    {% endmacro %}

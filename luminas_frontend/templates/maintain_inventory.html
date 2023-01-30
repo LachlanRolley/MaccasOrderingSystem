@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<!-- you can use required tag to prevent user from entering empty strings too! - probably simpler -->
+<div><form method="POST">
+    <div>
+        
+        <h1>Inventory Levels </h1>
+        <h1>Buns</h1>
+        {{show_inventory(stock, "bun")}}
+
+        <h1>Paddys</h1>
+        {{show_inventory(stock, "paddy")}}
+
+        <h1>Ingredients</h1>
+        {{show_inventory(stock, "ingredient")}}
+
+        <h1>Wraps</h1>
+        {{show_inventory(stock, "wrap")}}
+
+        <h1>Sides</h1>
+        {{show_inventory(stock, "side")}}
+
+        <h1>Drinks</h1>
+        {{show_inventory(stock, "drink")}}
+        <br>        
+
+        <button name="confirm" type="submit">Confirm Updates</button>
+</form></div>
+{% endblock %}
+
+
+
+{% macro show_inventory(inventory, ingredient_type) %}
+    {% for ingredient in inventory %}
+        {% if inventory[ingredient].ingredient_type == ingredient_type%}
+            <h>{{inventory[ingredient].name}} with current stock 
+                {{inventory[ingredient].stock_level}} {{inventory[ingredient].measuring_unit}}</h> <br>
+            <h>Add stock:  </h><input type="number" name="{{inventory[ingredient].name}}" min="0"  
+            value ><br><br>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+
+
+
